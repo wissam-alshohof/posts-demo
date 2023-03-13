@@ -1,2 +1,4 @@
 # posts-demo
-web app to handle posts :Fetch, Add, Update and Delete
+Web app to handle posts :Fetch, Add, Update and Delete
+
+Using React.js and Redux for state management
