@@ -1,0 +1,10 @@
+@import url('./assets/vars.css');
+
+* {
+    box-sizing: border-box;
+}
+
+.headline {
+    color: transparent;
+    -webkit-text-stroke: 1px #04D939;
+  }

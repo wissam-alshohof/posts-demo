@@ -1,21 +1,31 @@
 .card {
     display: flex;
+    background: var(--backgroundColor);
     flex-direction: column;
-    box-shadow: 3px 3px 5px wheat;
-    background-color: aliceblue;
-    border: 2px solid #5a5a5a;
+    box-shadow: 3px 3px 5px var(--shadowColor);
+    border: 2px solid #ffffff;
     border-radius: 5px;
+    margin-top: 10px;
+    max-width: 700px;
 }
 
 .title {
     font-weight: 700;
     font-size: 24px;
-    border-bottom: 3px solid wheat;
-    text-transform: capitalize;
-    padding: 5px;
+    border-bottom: 3px solid var(--primaryColor);
+    text-transform: uppercase;
+    padding: 10px 20px;
 }
 .body {
-    padding-left: 10px;
-    overflow-y: hidden;
+    padding-left: 20px;
+    display: -webkit-box;
     -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width:768px) {
+    .card {
+        max-width: 80%;
+    }
 }
