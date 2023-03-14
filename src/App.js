@@ -5,6 +5,7 @@ import Post from './components/Post';
 import PostsContainer from './components/PostsContainer';
 import { getPostsByPage } from './state/actions/postsActions';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,13 +15,15 @@ function App() {
   const posts = useSelector(state => state.postsState.posts);
 
 
-  return (
+  return (<>
+  <Header/>
     <PostsContainer>
       {posts.length &&
         posts.map(post => {
           return <Post title={post.title} body={post.body} key={post.id} />
         })}
     </PostsContainer>
+  </>
   );
 }
 

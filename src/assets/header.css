@@ -1,0 +1,35 @@
+
+.header {
+    width: 100%;
+    display: flex;
+}
+:is(.header) ul {
+    width: 100%;
+    position: sticky;
+    top:0;
+    display: inherit;
+    height:4rem;
+    list-style-type: none;
+    justify-items: start;
+    justify-content: start;
+    background-color: var(--primaryColor);
+}
+:is(.header) li {
+    display: inherit;
+    place-content: center;
+    place-items: center;
+    padding-inline: 10px;
+    cursor: pointer;
+    color: transparent;
+    font-size: larger;
+    -webkit-text-stroke: 1px var(--shadowColor);
+}
+
+li:hover {
+    -webkit-text-stroke-color:var(--primaryColor) ;
+    background-color: var(--shadowColor);
+    transition: all ease-in 0.3s;
+}
+.header li:first-child {
+    font-size: x-large;
+}
