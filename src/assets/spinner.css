@@ -1,0 +1,36 @@
+.spinner {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top:50%;
+    border-radius: 50%;
+    border: 3px solid var(--primaryColor);
+    box-shadow: 1px 1px 1px var(--primaryColor);
+    border-top: transparent;
+    border-bottom: transparent;
+    left:50%;
+    translate: -50% -50%;
+    background-color: transparent;
+    animation: spinner 1s infinite;
+}
+
+@keyframes spinner {
+   
+    0% {
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -90deg;
+    }
+    50% {
+        rotate: 0deg;
+    }
+    75% {
+        rotate: 90deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+    
+    
+}
