@@ -1,28 +1,28 @@
 
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Post from './components/Post';
+import { useDispatch } from 'react-redux';
 import PostsContainer from './components/PostsContainer';
 import { getPostsByPage } from './state/actions/postsActions';
 import './App.css';
 import Header from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Spinner from './components/Spinner';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPostsByPage({ start: 0, limit: 10 }))
-  }, [])
-  const posts = useSelector(state => state.postsState.posts);
+  }, [dispatch])
 
 
-  return (<>
-  <Header/>
-    <PostsContainer>
-      {posts.length &&
-        posts.map(post => {
-          return <Post title={post.title} body={post.body} key={post.id} />
-        })}
-    </PostsContainer>
+  return (
+  <>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Spinner />} />
+      <Route path="/posts" element={<PostsContainer />} />
+    </Routes>
   </>
   );
 }

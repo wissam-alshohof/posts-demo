@@ -14,8 +14,10 @@
     justify-content: start;
     background-color: var(--primaryColor);
 }
-:is(.header) li {
-    display: inherit;
+.header ul :is(li,Link) {
+    text-decoration: none;
+    display: flex;
+    height: 100%;
     place-content: center;
     place-items: center;
     padding-inline: 10px;
@@ -25,7 +27,7 @@
     -webkit-text-stroke: 1px var(--shadowColor);
 }
 
-li:hover {
+.header li:hover {
     -webkit-text-stroke-color:var(--primaryColor) ;
     background-color: var(--shadowColor);
     transition: all ease-in 0.3s;
