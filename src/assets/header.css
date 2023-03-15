@@ -35,3 +35,8 @@
 .header li:first-child {
     font-size: x-large;
 }
+.header .active li{
+    -webkit-text-stroke-color:var(--primaryColor) ;
+    background-color: var(--shadowColor);
+    transition: all ease-in 0.3s;
+}

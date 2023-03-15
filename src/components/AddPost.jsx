@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '../assets/posts.css'
 import { addPostBy } from '../state/actions/postsActions';
+import { ObjectUtils } from '../utils/objectUtils';
 
 const showToast = () => {}
 function AddPost(props) {
@@ -16,18 +17,10 @@ function AddPost(props) {
     const setFormValueHandle = (key,value) => {
         setFormValue((V) => ({...V,[key]:value.target.value}));
     }
-    const isValid = (obj) => {
-        for(let k of Object.keys(obj)) {
-            if(obj[k]) {
-                continue;
-            }
-            return false;
-        }
-        return true;
-    }
+  
     const addPost = (e) => {
         e.preventDefault();
-        if(isValid(formValue)) {
+        if(ObjectUtils.isValid(formValue)) {
             dispatch(addPostBy(formValue))
             navigate('/posts');
         } else showToast('Please Fill all the required fields')
@@ -41,7 +34,10 @@ function AddPost(props) {
                 <label htmlFor="body" className='label-title'>Body:</label>
                 <textarea id="body" name="body" className='form-input' value={formValue['body']} onChange={setFormValueHandle.bind(this,'body')} ></textarea>
 
-                <button type="submit">Submit</button>
+                <button type="submit" 
+                disabled={!ObjectUtils.isValid(formValue)} 
+                style={!ObjectUtils.isValid(formValue) ?{'cursor':'not-allowed'}:{cursor:'pointer'}}
+                >Submit</button>
             </div>
         </form>
     );

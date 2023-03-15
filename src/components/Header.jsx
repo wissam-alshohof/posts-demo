@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../assets/header.css'
 
 function Header(props) {
     return (
         <div className='header'>
             <ul>
-                <Link to="/" style={{textDecoration:"none"}} ><li> Home </li></Link>
-                <Link to="/posts"  style={{textDecoration:"none"}}><li> Posts </li></Link>
+                <NavLink to="/" style={{textDecoration:"none"}}  
+                className={({ isActive, isPending }) => isActive ? "active" : ""}><li> Home </li></NavLink>
+                <NavLink to="/posts"  style={{textDecoration:"none"}} 
+                className={({ isActive, isPending }) => isActive ? "active" : ""}><li> Posts </li></NavLink>
             </ul>
         </div>
     );

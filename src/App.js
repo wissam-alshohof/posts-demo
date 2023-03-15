@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Post from './components/Post';
 import AddPost from './components/AddPost';
+// import Toast from './components/Toast';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={<Toast message="hi" />} /> */}
       <Route path="/posts" element={<PostsContainer />} />
       <Route path="/posts/:id" element={<Post edit={true} />} />
       <Route path="/posts/new-post" element={<AddPost  />} />

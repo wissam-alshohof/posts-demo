@@ -35,3 +35,28 @@
     color:  var(--seconderyColor);
     border: 1px solid currentColor;
 }
+
+.toast {
+    position: absolute;
+    width: 30%;
+    border: 1px solid var(--primaryColor);
+    border-radius: .5em;
+    box-shadow: 3px 3px 6px var(--backgroundColor);
+    height: 30%;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    translate: -50% -50%;
+    background-color: var(--seconderyColor);
+    color: var(--backgroundColor);
+    backdrop-filter: blur(3px);
+}
+.toast .exit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
