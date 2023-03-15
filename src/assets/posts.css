@@ -15,6 +15,8 @@
     border-bottom: 3px solid var(--primaryColor);
     text-transform: uppercase;
     padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
 }
 .body {
     padding-left: 20px;
@@ -29,3 +31,70 @@
         max-width: 80%;
     }
 }
+
+/* for card title and body when post on edit mode or adding mode*/
+.card-edit {
+    min-width: 90%;
+    flex-wrap: wrap;
+    margin: auto;
+    align-content: center;
+    min-height: 50%;
+}
+
+.title-edit , .body-edit {
+    min-width: 95%;
+    max-width: 95%;
+}
+
+.body-edit {
+    -webkit-line-clamp: unset;
+    overflow: auto;
+    max-height: 60%;
+    min-height: 60%;
+
+}
+.label-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .form-input {
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 3px 3px 5px var(--shadowColor);
+    font-size: 1rem;
+  }
+  .form-input:focus-visible {
+    transition: all 0.3s ease-in;
+    outline: unset;
+    color:  var(--seconderyColor);
+    border: 1px solid currentColor;
+  }
+  
+  button[type="submit"] {
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--backgroundColor);
+    color: var(--primaryColor);
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }

@@ -25,7 +25,7 @@ export const postsSlice = createSlice({
          * Delete post by Id
          */
         deletePost: (state,action) => {
-            state = state.posts.filter(post => post.id !== action.payload)
+            state = state.posts.filter(post => post.id !== action.payload);
         },
         setPending: (state,action) => {
             state.pending = action.payload;

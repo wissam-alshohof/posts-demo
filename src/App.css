@@ -8,3 +8,30 @@
     color: transparent;
     -webkit-text-stroke: 1px #04D939;
   }
+
+  .hidden {
+    visibility: hidden;
+  }
+  .actions {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .button {
+    font-size: larger;
+    margin: 1rem auto;
+    display: flex;
+    background-color: var(--primaryColor);
+    cursor: pointer;
+    color: var(--backgroundColor);
+    border: 1px solid var(--primaryColor);
+    border-radius: 5px;
+    width: 4.5rem;
+}
+.button:hover {
+    transition: all 0.3s ease-in;
+    outline: unset;
+    color:  var(--seconderyColor);
+    border: 1px solid currentColor;
+}

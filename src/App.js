@@ -7,7 +7,8 @@ import './App.css';
 import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import Spinner from './components/Spinner';
+import Post from './components/Post';
+import AddPost from './components/AddPost';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/posts" element={<PostsContainer />} />
+      <Route path="/posts/:id" element={<Post edit={true} />} />
+      <Route path="/posts/new-post" element={<AddPost  />} />
     </Routes>
   </>
   );
