@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     posts:[],
+    start:0,
+    limit:5,
     error: null,
     pending :false
 };
@@ -33,10 +35,14 @@ export const postsSlice = createSlice({
         },
         resetPosts: (state,action) => {
             state = initialState;
+        },
+        setNav: (state, action) => {
+            state.start = +action.payload['start'];
+            state.limit = +action.payload['limit'];
         }
     }
 });
 
-export const { getPosts, addPost, updatePost, deletePost, setPending, setError, resetPosts} = postsSlice.actions;
+export const { getPosts, addPost, updatePost, deletePost, setPending, setError, resetPosts, setNav} = postsSlice.actions;
 
 export const postsReducer = postsSlice.reducer;

@@ -5,7 +5,7 @@ import './../assets/home.css';
 function Home(props) {
     return (
         <div className='home'>
-            Welcome to the Posts app
+            {props.text ?? " Welcome to the Posts app"}
         </div>
     );
 }

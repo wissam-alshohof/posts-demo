@@ -1,0 +1,34 @@
+.navigator {
+    display: flex;
+    place-content: center;
+    gap: 1rem;
+}
+.items {
+    display: flex;
+    max-width: 50%;
+    place-content: center;
+}
+.navigator .items > * {
+    flex-grow: 0;
+}
+.navigator .items input {
+    text-align: center;
+    position: relative;
+    display: inline-flex;
+    border: 1px solid var(--primaryColor);
+    margin: auto;
+    border-radius: 5px;
+    caret-color: var(--primaryColor);
+    width: 4rem;
+}
+.navigator .items span {
+    color:var(--seconderyColor);
+}
+
+.navigator .items input:is(:focus,:focus-visible) {
+    transition: all 0.3s ease-in;
+    outline: unset;
+    color:  var(--seconderyColor);
+    border: 1px solid currentColor;
+
+}

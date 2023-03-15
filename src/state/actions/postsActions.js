@@ -1,10 +1,11 @@
 import axios from "axios";
 import { APIS } from "../apis";
-import { addPost, getPosts, updatePost, deletePost, setError, setPending } from "../reducers/postsSlice";
+import { addPost, getPosts, updatePost, deletePost, setError, setPending, setNav } from "../reducers/postsSlice";
 
-export const getPostsByPage = ({ start, limit }) =>  (dispatch) => {
+export const getPostsByPage = ({ start, limit } ={start:0,limit:5}) =>  (dispatch) => {
 
     dispatch(setPending(true));
+    dispatch(setNav({start:start,limit:limit}));
    axios.get(`${APIS.getPosts}`, {
         params: {
             _start: start,
@@ -21,4 +22,8 @@ export const getPostsByPage = ({ start, limit }) =>  (dispatch) => {
         dispatch(setPending(false));
         dispatch(setError(err));
     })
+}
+
+export const getPostAfterNavSizeChange = (pageSize) => dispatch => {
+    dispatch(getPostsByPage({start:0,limit:pageSize}));
 }

@@ -1,6 +1,7 @@
 :root {
     --backgroundColor : #fdfdfd;
-    --primaryColor: wheat;
+    --primaryColor: hsla(39, 77%, 83%,100%);
     --shadowColor: aliceblue;
+    --seconderyColor: hsl(39deg 100% 48%);
 
 }

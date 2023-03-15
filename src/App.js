@@ -12,7 +12,7 @@ import Spinner from './components/Spinner';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPostsByPage({ start: 0, limit: 10 }))
+    dispatch(getPostsByPage())
   }, [dispatch])
 
 
@@ -20,7 +20,7 @@ function App() {
   <>
     <Header />
     <Routes>
-      <Route path="/" element={<Spinner />} />
+      <Route path="/" element={<Home />} />
       <Route path="/posts" element={<PostsContainer />} />
     </Routes>
   </>
